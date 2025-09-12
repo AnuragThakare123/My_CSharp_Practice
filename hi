@@ -1,0 +1,61 @@
+using System;
+using System.IO;
+
+
+class MyFile
+{
+    static void Main()
+
+    {
+        Console.Write("Enter units consumed by ur Meter: ");
+        String input = Console.ReadLine();
+
+        int units = Convert.ToInt16(input);
+
+        int totalbill = 0;
+
+        if (units <= 100)
+        {
+            totalbill = units * 5;
+        }
+        else if (units <= 200)
+        {
+            totalbill = (100 * 5) + ((units - 100) * 7);
+
+        }
+        else
+        {
+            totalbill = (100 * 5) + (100 * 7) + ((units - 200) * 10);
+        }
+        Console.WriteLine("Total Electricity Bill: " + totalbill);
+
+    }
+
+}
+---------------------------
+using System;
+using System.Globalization;
+using System.IO;
+
+
+class MyFile
+{
+    static void Main()
+
+    {
+        Console.WriteLine("Hello Anurag!, can u enter ur value:");
+
+        String val1 = Console.ReadLine();
+        int Val = Convert.ToInt16(val1);
+
+        Console.WriteLine("Hi Beta Ur value is" + Val);
+    }
+
+}
+
+
+
+
+
+
+-
