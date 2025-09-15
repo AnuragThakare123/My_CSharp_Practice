@@ -1,0 +1,64 @@
+using System;
+using System.Globalization;
+using System.IO;
+using System.Reflection.Emit;
+using System.Security.Cryptography;
+
+
+namespace HelloWorld
+{
+
+    class Car
+    {
+        public string Make { get; set; }
+        public string Model { get; set; }
+        public int Year { get; set; }
+        public string Color { get; set; }
+
+
+    }
+
+    class Customer
+    {
+        public int Customerid;
+        public String Name;
+        public int UnitsConsumed;
+
+        public void ShowBill()
+        {
+            System.Console.WriteLine("Your Customer Info is:");
+            System.Console.WriteLine(Customerid);
+            System.Console.WriteLine(Name);
+            System.Console.WriteLine(UnitsConsumed);
+
+            int BillAmt = UnitsConsumed * 5;
+
+            System.Console.WriteLine(BillAmt );
+
+
+        }
+        
+    }
+
+
+
+
+    class program
+    {
+        static void Main(String[] args)
+        {
+
+
+            Customer Cust1 = new Customer();
+            Cust1.Customerid = 101;
+            Cust1.Name = "Anu";
+            Cust1.UnitsConsumed = 40;
+
+            Cust1.ShowBill();
+
+           
+
+
+        }
+    }
+}
