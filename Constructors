@@ -1,0 +1,66 @@
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Reflection.Emit;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
+
+
+namespace HelloWorld
+{
+
+
+    public class Person
+    {
+
+        public string Name;
+        public int Age;
+
+
+        // public Person()
+        // {
+        //     Name = "Anu";
+        //     Age = 12 ;
+
+        // }
+
+        public Person(String name, int age)
+        {
+            Name = name;
+            Age = age;
+        }
+
+
+        public void Showinfo()
+        {
+           System.Console.WriteLine("Name:" + Name);
+           System.Console.WriteLine("Age:" + Age);
+
+        }
+
+    }
+
+
+    class program
+    {
+        static void Main(String[] args)
+        {
+
+
+            Person Anu = new Person("Anu", 34);
+
+
+            // System.Console.WriteLine("Enter Your Name:");
+            // String name = System.Console.ReadLine();
+
+            // System.Console.WriteLine("Enter Your Age:");
+            // // int age = System.Console.ReadLine();
+            // String age = System.Console.ReadLine();
+            
+             Anu.Showinfo();
+
+
+        }
+    }
+}
