@@ -62,3 +62,67 @@ namespace HelloWorld
         }
     }
 }
+------------------------------------
+using System;
+using System.Globalization;
+using System.IO;
+using System.Reflection.Emit;
+using System.Security.Cryptography;
+
+
+namespace HelloWorld
+{
+
+    class Customer
+    {
+        public int Customerid { get; set; }
+        public String Name{ get; set; }
+        public int UnitsConsumed { get; set; }
+
+
+        public Customer(int id, String name, int Units)
+        {
+            Customerid = id;
+            Name = name;
+            UnitsConsumed = Units;
+            
+        }
+
+        public void ShowBill()
+        {
+            System.Console.WriteLine("Your Customer Info is:");
+            System.Console.WriteLine(Customerid);
+            System.Console.WriteLine(Name);
+            System.Console.WriteLine(UnitsConsumed);
+
+            int BillAmt = UnitsConsumed * 5;
+
+            System.Console.WriteLine(BillAmt);
+
+
+        }
+        
+    }
+
+    class program
+    {
+        static void Main(String[] args)
+        {
+
+            System.Console.WriteLine("Enter Cust id:");
+            int id = Convert.ToInt32(Console.ReadLine());
+
+            System.Console.WriteLine("Enter Name:");
+            String name = Console.ReadLine();
+
+            System.Console.WriteLine("Enter ur Untis:");
+            int units = Convert.ToInt32(Console.ReadLine());
+
+
+            Customer Cust2 = new Customer(id, name, units);
+
+            Cust2.ShowBill();
+
+        }
+    }
+}
