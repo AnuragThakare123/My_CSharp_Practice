@@ -130,3 +130,75 @@ namespace HelloWorld
 }
 
 --------------------------------------
+// Smart Meter_Statistics
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Reflection.Emit;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
+
+
+namespace HelloWorld
+{
+
+
+class Meter_Statistics
+{
+        int[] Customer = { 10, 15, 20, 12, 18, 25, 30 };
+
+
+
+
+
+        public void Total_units()
+        {
+            int sum = 0;
+            for (int i = 0; i < Customer.Length; i++)
+            {
+                sum = sum + Customer[i];
+            }
+
+            System.Console.WriteLine("Your total consumption is :{0}", sum);
+            
+            int Avg = sum / Customer.Length;
+            System.Console.WriteLine("Your Avg consumption is :{0}",Avg);
+        }
+
+        public void highest_Consumption()
+        {
+            int high = Customer[0];
+            for (int i = 1; i < Customer.Length; i++)
+            {
+                if (high < Customer[i])
+                {
+                    high = Customer[i];
+                }
+              
+            }
+            
+            System.Console.WriteLine("Your Avg consumption is :{0}",high);
+
+
+        }
+}
+
+
+    class program
+    {
+        static void Main(String[] args)
+        {
+
+            Meter_Statistics meter1 = new Meter_Statistics();
+            meter1.Total_units();
+            meter1.highest_Consumption();
+
+
+
+        }
+    }
+}
+
+
