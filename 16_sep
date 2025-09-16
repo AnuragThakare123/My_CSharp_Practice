@@ -349,3 +349,53 @@ namespace HelloWorld
         }
     }
 }
+
+------------------------
+// Inheritance
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Net.Http.Headers;
+using System.Reflection.Emit;
+using System.Reflection.Metadata;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
+
+
+namespace HelloWorld
+{
+
+    class Shape
+    {
+        public void Draw()
+        {
+            System.Console.WriteLine("Drawing a Shape");
+        }
+      }
+
+    class Circle : Shape
+    {
+        public void showradius()
+        {
+            System.Console.WriteLine("Cicle radius is 5");
+        }
+    }
+
+
+    class program
+    {
+        static void Main(String[] args)
+        {
+            Circle c = new Circle();
+
+            // parent
+            c.Draw();
+
+            // Child
+            c.showradius();
+
+        }
+    }
+}
