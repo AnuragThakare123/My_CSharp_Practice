@@ -1,0 +1,222 @@
+// Constructors
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Reflection.Emit;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
+
+
+namespace HelloWorld
+{
+
+
+    public class Person
+    {
+
+        public string Name;
+        public int Age;
+
+
+        public Person(String name, int age)
+        {
+            Name = name;
+            Age = age;
+        }
+
+
+        public void Showinfo()
+        {
+           System.Console.WriteLine("Name:" + Name);
+           System.Console.WriteLine("Age:" + Age);
+
+        }
+
+    }
+
+    public class Box
+    {
+        public int length;
+        public int width;
+        public int height;
+
+
+        public Box()
+        {
+            length = 1;
+            width = 1;
+            height = 1;
+        }
+
+        public Box(int size)
+        {
+            length = width = height = size;
+        }
+
+        public Box(int Length, int Width, int Height)
+        {
+            length = Length;
+            width = Width;
+            height = Height;
+        }
+
+        public void showdimension()
+        {
+            Console.WriteLine(length + width + height);
+        }
+
+
+    }
+    
+ 
+
+
+    class program
+    {
+        static void Main(String[] args)
+        {
+
+
+            // System.Console.WriteLine("Enter Your Name:");
+            // String name = System.Console.ReadLine();
+
+            // System.Console.WriteLine("Enter Your Age:");
+            // int age = Convert.ToInt32(System.Console.ReadLine());
+
+
+            // Person Anu = new Person(name, age);
+
+
+            // Anu.Showinfo();
+
+
+            Box B1 = new Box();
+            B1.showdimension();
+
+            Box B2 = new Box(size: 2);
+            B2.showdimension();
+
+            Box B3 = new Box( 3);
+            B3.showdimension();
+
+            Box B4 = new Box(5, 6, 7);
+            B4.showdimension();
+
+
+        }
+    }
+}
+--------------------
+// Getter and Setter 
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Net.Http.Headers;
+using System.Reflection.Emit;
+using System.Reflection.Metadata;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
+
+
+namespace HelloWorld
+{
+
+
+    public class Student
+    {
+
+        private string Name;
+        private int Age;
+
+        public string Naav
+        {
+            get { return Name; }
+            set { Name = value; }
+        }
+
+        public int Vay
+        {
+            get { return Age; }
+            set { Age = value; }
+        }
+
+        public void Showinfo()
+        {
+            System.Console.WriteLine("Name:" + Name);
+            System.Console.WriteLine("Age:"+ Age);
+
+       }
+
+    }
+
+
+    class program
+    {
+        static void Main(String[] args)
+        {
+            Student s = new Student();
+            s.Naav = "Ganeshlala";
+            s.Vay = 45;
+            
+            s.Showinfo();
+
+
+        }
+    }
+}
+
+----------------------
+// Auto-Implemented (Getter & Setter)
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Net.Http.Headers;
+using System.Reflection.Emit;
+using System.Reflection.Metadata;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
+
+
+namespace HelloWorld
+{
+
+
+    public class Student
+    {
+
+        public string Name{ get; set; }
+        public  int Age{ get; set; }
+
+    
+
+        public void Showinfo()
+        {
+            System.Console.WriteLine("Name:" + Name);
+            System.Console.WriteLine("Age:"+ Age);
+
+       }
+
+    }
+
+
+    class program
+    {
+        static void Main(String[] args)
+        {
+
+            Student s = new Student();
+            s.Name= "Amar-Ujala";
+            s.Age= 15;
+
+            s.Showinfo();
+
+
+        }
+    }
+}
