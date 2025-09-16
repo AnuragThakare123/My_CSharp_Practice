@@ -170,7 +170,7 @@ namespace HelloWorld
 }
 
 ----------------------
-// Auto-Implemented (Getter & Setter)
+// Auto-Implemented Property (Getter & Setter)
 
 using System;
 using System.Diagnostics.CodeAnalysis;
@@ -215,6 +215,135 @@ namespace HelloWorld
             s.Age= 15;
 
             s.Showinfo();
+
+
+        }
+    }
+}
+------------------
+// Static Vs Non-Static
+
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Net.Http.Headers;
+using System.Reflection.Emit;
+using System.Reflection.Metadata;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
+
+
+namespace HelloWorld
+{
+
+
+    
+
+    public class Demo
+    {
+        public static int num1 = 0;
+
+        public int num2 = 0;
+
+
+        public static void showstatic()
+        {
+            System.Console.WriteLine("Static No:" + num1);
+        }
+
+        public void nonstatic()
+        {
+            num2++;
+            num1++;
+
+            System.Console.WriteLine("NoStatic:" + num2);
+            System.Console.WriteLine("NoStatic:" + num1);
+
+        }
+    }
+
+
+    class program
+    {
+        static void Main(String[] args)
+        {
+            System.Console.WriteLine("Using Non Static Keyword:");
+
+
+            Demo obj1 = new Demo();
+            Demo obj2 = new Demo();
+
+            obj1.nonstatic();
+            obj2.nonstatic();
+
+            System.Console.WriteLine("Using Static Keyword:");
+            Demo.showstatic();
+
+        }
+    }
+}
+----------------
+/To String Method
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Net.Http.Headers;
+using System.Reflection.Emit;
+using System.Reflection.Metadata;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
+
+
+namespace HelloWorld
+{
+
+
+    
+
+    public class Demo
+    {
+        public static int num1 = 0;
+
+        public int num2 = 0;
+
+
+        public static void showstatic()
+        {
+            System.Console.WriteLine("Static No:" + num1);
+        }
+
+        public void nonstatic()
+        {
+            num2++;
+            num1++;
+
+            System.Console.WriteLine("NoStatic:" + num2);
+            System.Console.WriteLine("NoStatic:" + num1);
+
+        }
+    }
+
+
+    class program
+    {
+        static void Main(String[] args)
+        {
+
+
+
+            int num1 = 45;
+            int num2 = 50;
+
+
+            string str = Convert.ToString(num1);
+            string str2 = Convert.ToString(num2);
+
+
+            System.Console.WriteLine(str + str2);
 
 
         }
