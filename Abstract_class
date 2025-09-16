@@ -1,0 +1,68 @@
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Net.Http.Headers;
+using System.Reflection.Emit;
+using System.Reflection.Metadata;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
+
+
+namespace HelloWorld
+{
+
+  
+
+    public abstract class burger
+    {
+        public int num1;
+        public int num2;
+
+        public void burger_add(int num1, int num2)
+        {
+            System.Console.WriteLine(num1 + num2);
+        }
+
+        public void burger_sub(int num1, int num2)
+        {
+            System.Console.WriteLine(num1 - num2);
+        }
+
+        public abstract void burger_Mul(int num1,int num2);
+
+        public abstract void burger_div(int num1, int num2);
+        
+        
+
+    }
+
+    public class zinger : burger
+    {
+        public override void burger_Mul(int num1, int num2)
+        {
+            System.Console.WriteLine(num1 * num2);
+        }
+
+        public override void burger_div(int num1, int num2)
+        {
+            System.Console.WriteLine(num1/num2);
+        }
+    }
+
+    class program
+    {
+        static void Main(String[] args)
+        {
+
+            zinger spicyzinger = new zinger();
+
+            // Accessing methods
+            spicyzinger.burger_add(4, 5);
+            spicyzinger.burger_add(4, 5);
+            spicyzinger.burger_Mul(45, 5);
+            spicyzinger.burger_div(23, 34);
+
+        }
+    }
+}
