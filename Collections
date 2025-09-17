@@ -1,0 +1,47 @@
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Net.Http.Headers;
+using System.Reflection.Emit;
+using System.Reflection.Metadata;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
+using HelloWorld;
+
+
+namespace HelloWorld
+{
+
+
+    class program
+    {
+        static void Main(String[] args)
+        {
+            // idhar hum interface seh class koh refer kar rahe hai
+            // Itestinterface1 obj1 = new Itestinterface1_class();
+            // obj1.add(4, 5);
+
+
+            List<string> students = new List<string>();
+            students.Add("Kumar");
+            students.Add("Ketan");
+            students.Add("ali");
+            students.Add("Summer");
+            students.Add("jai");
+
+            System.Console.WriteLine(students[3]);
+
+
+            Dictionary<int, string> Gets = new Dictionary<int, string>();
+            Gets[0] = "Hashir";
+            Gets[1] = "Lokesh";
+            Gets[2] = "Mahesh";
+
+            System.Console.WriteLine(Gets[2]);
+
+         
+
+        }
+    }
+}
