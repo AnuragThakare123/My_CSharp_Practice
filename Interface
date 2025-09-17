@@ -1,0 +1,180 @@
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Net.Http.Headers;
+using System.Reflection.Emit;
+using System.Reflection.Metadata;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
+
+
+namespace HelloWorld
+{
+
+    interface ITestinterface1
+    {
+        void add(int num1, int num2);
+       
+  }
+
+    interface ITestinterface2 : ITestinterface1
+    {
+        void sub(int num1, int num2);
+  }
+
+
+    public class ITestinterface1_class1 : ITestinterface1
+    {
+        //public void mul(int num1, int num2);
+        public void add(int num1, int num2)
+        {
+            System.Console.WriteLine(num1 + num2);
+        }
+}
+
+    public class ITestinterface1_class2 : ITestinterface2
+    {
+        // abhi isme dono method implement karna padega add() & sub()
+        // kyuki usne ITestinterface2 & Interface1 seh inherit kiya
+        public void sub(int num1, int num2)
+        {
+            System.Console.WriteLine(num1 - num2);
+        }
+
+        public void add(int num1, int num2)
+        {
+            System.Console.WriteLine(num1 + num2);
+        }
+
+    }
+
+
+
+    class program
+    {
+        static void Main(String[] args)
+        {
+            ITestinterface1_class1 obj1 = new ITestinterface1_class1();
+            obj1.add(2, 3);
+
+            ITestinterface1_class2 obj2 = new ITestinterface1_class2();
+            obj2.add(45, 5);
+            obj2.sub(20, 10);
+        
+
+        }
+    }
+}
+---------------------
+
+// idhar hum interface seh class koh refer kar rahe hai
+
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Net.Http.Headers;
+using System.Reflection.Emit;
+using System.Reflection.Metadata;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
+using HelloWorld;
+
+
+namespace HelloWorld
+{
+
+    interface Itestinterface1
+    {
+        void add(int num1, int num2);
+
+    }
+
+    public class Itestinterface1_class: Itestinterface1
+    {
+        
+        public void sub(int num1, int num2) {
+        System.Console.WriteLine(num1 - num2);
+    }
+        public void add(int num1, int num2) {
+            System.Console.WriteLine(num1 + num2);
+        }
+
+    }
+
+    class program
+    {
+        static void Main(String[] args)
+        {
+            // idhar hum interface seh class koh refer kar rahe hai
+            Itestinterface1 obj1 = new Itestinterface1_class();
+            obj1.add(4, 5);
+         
+
+        }
+    }
+}
+
+
+-------------------
+//  Explicit Implementation of Interface Method
+// two ways of implementing interface members in C#.
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Net.Http.Headers;
+using System.Reflection.Emit;
+using System.Reflection.Metadata;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
+using HelloWorld;
+
+
+namespace HelloWorld
+{
+
+    interface Itestinterface1
+    {
+        void add(int num1, int num2);
+
+    }
+
+    public class Itestinterface1_class : Itestinterface1
+    {
+
+        public void sub(int num1, int num2)
+        {
+            System.Console.WriteLine(num1 - num2);
+        }
+        public void add(int num1, int num2)
+        {
+            System.Console.WriteLine(num1 + num2);
+        }
+
+        // OR - We can declare like this also ( Explicit implementation of Interface Method)
+
+        void Itestinterface1.add(int num1, int num2)
+        {
+            System.Console.WriteLine(num1 + num2);
+        }
+
+    }
+
+    class program
+    {
+        static void Main(String[] args)
+        {
+            // idhar hum interface seh class koh refer kar rahe hai
+            Itestinterface1 obj1 = new Itestinterface1_class();
+            obj1.add(4, 5);
+         
+
+        }
+    }
+}
+
+-------------------
