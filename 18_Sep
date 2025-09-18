@@ -1,0 +1,81 @@
+// Crete a base class Smart meter and derieved two classes
+
+
+using System;
+
+namespace HelloWorld
+{
+    class SmartMeter
+    {
+        public int MeterID{ get; set; }
+        public String CustomerName{ get; set; }
+
+        public SmartMeter(int meterID, String customerName)
+        {
+            MeterID = meterID;
+            CustomerName = customerName;
+
+        }
+
+    }
+    //:base(meterID, customerName)
+
+    class ResidentiaMeter : SmartMeter
+    {
+        public String Property { get; set; }
+
+        public ResidentiaMeter(int meterID, String customerName, string property):base(meterID,customerName)
+        {
+
+            Property = property;
+        }
+
+        public void showinfo()
+        {
+            System.Console.Write("Customer info for ResidentialMeter ->");
+
+            System.Console.Write("ID:" + MeterID + " ");
+            System.Console.Write("Name:" + CustomerName + " ");
+            System.Console.WriteLine("HouseType:" + Property);
+
+        }
+
+    }
+
+    class CommercialMeter : SmartMeter
+    {
+        public String Property;
+        public void showinfo()
+        {
+            System.Console.Write("Customer info for Commercialmeter->");
+
+            System.Console.Write("Id:" + MeterID + " ");
+            System.Console.Write("Name:" + CustomerName + " ");
+            System.Console.Write("BusinessType:" + Property);
+
+        }
+
+        public CommercialMeter(int meterID, String customerName,String property): base( meterID, customerName)
+        {
+            Property = property;
+        }
+    }
+
+    class program
+    {
+        static void Main(String[] args)
+
+        {
+            ResidentiaMeter R1 = new ResidentiaMeter(201,"alice","Apartment");
+            R1.showinfo();
+
+
+            CommercialMeter C1 = new CommercialMeter(301,"Robin","Shop");
+           
+            C1.showinfo();
+
+
+        }
+    }
+}
+------------------------
