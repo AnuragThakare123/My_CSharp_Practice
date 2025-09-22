@@ -1,1 +1,36 @@
+using System;
+using System.Drawing;
+using System.Runtime.InteropServices.Marshalling;
+using Microsoft.VisualBasic;
+using System.Threading.Tasks;
+
+namespace HelloWorld
+{
+   
+
+    class Program
+    {
+         class AsyncDemo
+    {
+       public static async Task PrintMessageAsync()
+        {
+            System.Console.WriteLine("Wait for 3 sec...");
+            await Task.Delay(3000);
+            System.Console.WriteLine("Done Wait!");
+       } 
+
+
+    }
+        static async Task Main(string[] args)
+        {
+            System.Console.WriteLine("Program get started");
+            await AsyncDemo.PrintMessageAsync();
+
+
+            System.Console.WriteLine("Program ended");
+
+
+        }
+    }
+}
 
